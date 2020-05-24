@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "e47469da-7a88-446c-a9b6-f34d0a82ee95",
+		"name": "NTTM: Automatozation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Авторизация",
+			"item": [
+				{
+					"name": "firs page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Просмотр инцидентов ",
+			"item": [
+				{
+					"name": "firs page Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "c71c0664-fabe-4bc5-a509-65e4006f72a2",
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Response time is less than 200ms\", function () {\r",
+									"    pm.expect(pm.response.responseTime).to.be.below(200);\r",
+									"});\r",
+									"pm.test(\"response must be valid and have a body\", function () {\r",
+									"     pm.response.to.be.ok;\r",
+									"     pm.response.to.be.withBody;\r",
+									"     //pm.response.to.be.json;\r",
+									"});\r",
+									"pm.globals.set(\"variable_key\", \"variable_value\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://10.28.97.115/#/login",
+							"protocol": "http",
+							"host": [
+								"10",
+								"28",
+								"97",
+								"115"
+							],
+							"path": [
+								""
+							],
+							"hash": "/login"
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
